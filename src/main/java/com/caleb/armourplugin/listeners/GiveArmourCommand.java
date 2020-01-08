@@ -16,13 +16,13 @@ public class GiveArmourCommand implements CommandExecutor {
         if(commandSender instanceof Player) {
             if(strings.length > 0) {
                 if (strings[0].equalsIgnoreCase("drumislandhelmet")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet"), 1, (Player) commandSender, Material.LEATHER_HELMET);
+                    giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet"), 1, (Player) commandSender, Material.DIAMOND_HELMET);
                 }  else if(strings[0].equalsIgnoreCase("drumislandchestplate")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Chestplate"), 1, (Player) commandSender, Material.LEATHER_CHESTPLATE);
+                    giveCustomArmour((ChatColor.AQUA + "Drum Island Chestplate"), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
                 } else if(strings[0].equalsIgnoreCase("drumislandleggings")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings"), 1, (Player) commandSender, Material.LEATHER_LEGGINGS);
+                    giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings"), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                 } else if(strings[0].equalsIgnoreCase("drumislandboots")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Boots"), 1, (Player) commandSender, Material.LEATHER_BOOTS);
+                    giveCustomArmour((ChatColor.AQUA + "Drum Island Boots"), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
                 }
 
 
