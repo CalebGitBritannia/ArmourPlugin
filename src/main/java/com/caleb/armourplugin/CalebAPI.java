@@ -4,6 +4,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Random;
+
 public class CalebAPI {
     public static boolean wearingDrumArmour(Player player) {
         int count = 0;
@@ -16,5 +18,13 @@ public class CalebAPI {
             }
         }
         return count ==4;
+    }
+
+    public static int getRandomNumberInRange(int min, int max) {
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 }
