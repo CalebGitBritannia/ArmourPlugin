@@ -14,25 +14,27 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class GiveArmourCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender instanceof Player) {
-            if(strings.length > 0) {
-                if (strings[0].equalsIgnoreCase("drumislandhelmet")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet"), 1, (Player) commandSender, Material.DIAMOND_HELMET);
-                }  else if(strings[0].equalsIgnoreCase("drumislandchestplate")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Chestplate"), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
-                } else if(strings[0].equalsIgnoreCase("drumislandleggings")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings"), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
-                } else if(strings[0].equalsIgnoreCase("drumislandboots")) {
-                    giveCustomArmour((ChatColor.AQUA + "Drum Island Boots"), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+            if(strings.length > 1) {
+                int value = Integer.valueOf(strings[1]);
+                if (value > 0 && value < 5) {
+                    if (strings[0].equalsIgnoreCase("drumislandhelmet")) {
+                        giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                    } else if (strings[0].equalsIgnoreCase("drumislandchestplate")) {
+                        giveCustomArmour((ChatColor.AQUA + "Drum Island Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                    } else if (strings[0].equalsIgnoreCase("drumislandleggings")) {
+                        giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                    } else if (strings[0].equalsIgnoreCase("drumislandboots")) {
+                        giveCustomArmour((ChatColor.AQUA + "Drum Island Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                    }else {
+                        commandSender.sendMessage("Sorry but that item is not recognised!");
+                    }
+                } else {
+                    commandSender.sendMessage("Please provide a valid number between 1 and 4");
                 }
 
-
-
-                else {
-                    commandSender.sendMessage("Sorry but that item is not recognised!");
-                }
                 return true;
             } else {
-                System.out.println("Need an argument");
+                System.out.println("(armour) (value)");
                 return true;
             }
         }
@@ -44,7 +46,6 @@ public class GiveArmourCommand implements CommandExecutor {
         ItemMeta meta = armourItem.getItemMeta();
         meta.setDisplayName(name);
         armourItem.setItemMeta(meta);
-        armourItem.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, protection);
         player.getInventory().addItem(armourItem);
     }
 }
