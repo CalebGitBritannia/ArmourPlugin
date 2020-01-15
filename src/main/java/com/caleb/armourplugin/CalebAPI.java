@@ -37,4 +37,17 @@ public class CalebAPI {
             }
         } return false;
     }
+
+    public static int getFrost(Player player) {
+        int count = 0;
+        ItemStack[] inventory = player.getInventory().getArmorContents();
+        for (int i = 0; i<inventory.length; i++) {
+            if (inventory[i].getItemMeta() != null) {
+                if(inventory[i].getItemMeta().getDisplayName().contains("Drum Island")) {
+                    count += (int) inventory[i].getItemMeta().getDisplayName().charAt(inventory[i].getItemMeta().getDisplayName().length() - 1) - 48;
+                }
+            }
+        }
+        return (int) count / 4;
+    }
 }

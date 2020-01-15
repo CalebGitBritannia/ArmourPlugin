@@ -38,7 +38,7 @@ public class EventsClass implements Listener {
                         LivingEntity living = (LivingEntity) e.getDamager();
                         player.getWorld().playSound(player.getLocation(), Sound.GLASS, 10, 1);
                         player.getWorld().playEffect(player.getLocation(), Effect.COLOURED_DUST, 1);
-                        living.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 3));
+                        living.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, CalebAPI.getFrost(player) + 1));
                         RollBack newRoll = new RollBack(player.getLocation(), 6);
                         for (int x = -6; x < 6; x++ ) {
                             for (int z = -6; z < 6; z++) {

@@ -34,7 +34,7 @@ public class GiveArmourCommand implements CommandExecutor {
 
                 return true;
             } else {
-                System.out.println("(armour) (value)");
+                commandSender.sendMessage("(armour) (value)");
                 return true;
             }
         }
