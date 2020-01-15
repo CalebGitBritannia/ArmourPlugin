@@ -36,6 +36,8 @@ public class EventsClass implements Listener {
                         player.getWorld().playSound(player.getLocation(), Sound.ANVIL_BREAK, 10, 1);
                         player.getWorld().playEffect(player.getLocation(), Effect.COLOURED_DUST, 1);
                         living.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 3));
+
+
                     }
                 }
             } else {
