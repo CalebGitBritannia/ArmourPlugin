@@ -19,7 +19,7 @@ public class CalebAPI {
                 }
             }
         }
-        return count ==4;
+        return count ==4 ;
     }
 
     public static int getRandomNumberInRange(int min, int max) {

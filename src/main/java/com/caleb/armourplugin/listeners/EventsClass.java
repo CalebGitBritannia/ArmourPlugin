@@ -36,7 +36,7 @@ public class EventsClass implements Listener {
                 if (CalebAPI.getRandomNumberInRange(1,5) == 1) {
                     if (e.getDamager() instanceof Player && !CalebAPI.gotFrost((Player) e.getDamager())) {
                         LivingEntity living = (LivingEntity) e.getDamager();
-                        player.getWorld().playSound(player.getLocation(), Sound.ANVIL_BREAK, 10, 1);
+                        player.getWorld().playSound(player.getLocation(), Sound.GLASS, 10, 1);
                         player.getWorld().playEffect(player.getLocation(), Effect.COLOURED_DUST, 1);
                         living.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 3));
                         RollBack newRoll = new RollBack(player.getLocation(), 6);
@@ -45,9 +45,9 @@ public class EventsClass implements Listener {
                                 Location location = player.getLocation();
                                 location.setZ(player.getLocation().getZ() + z);
                                 location.setX(player.getLocation().getX() + x);
-                                for(int y = 255; y > 0; y--) {
+                                for(int y = (int) (player.getLocation().getY() + 2); y > 0; y--) {
                                     location.setY(y);
-                                    if (location.getBlock().getType() != Material.AIR) {
+                                    if (location.getBlock().getType() != Material.AIR && location.getBlock().getType() != Material.LONG_GRASS) {
                                         int guesser = (int) (Math.random() * 10);
                                         if (guesser > 8) {
                                             newRoll.addBlock(location.getBlock());
@@ -57,7 +57,7 @@ public class EventsClass implements Listener {
                                     }
                                 }
                             }
-                        } BukkitTask task1 = new EventsClass.throwTask(newRoll).runTaskLater(plugin, 7*10);
+                        } BukkitTask task1 = new EventsClass.throwTask(newRoll).runTaskLater(plugin, 20*10);
 
 
                     }
