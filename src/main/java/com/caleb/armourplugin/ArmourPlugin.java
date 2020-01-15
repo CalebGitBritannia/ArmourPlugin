@@ -9,6 +9,6 @@ public class ArmourPlugin extends JavaPlugin {
     public void onEnable(){
         System.out.println("Plugin works uwu!");
         this.getCommand("givearmour").setExecutor(new GiveArmourCommand());
-        getServer().getPluginManager().registerEvents(new EventsClass(), this);
+        getServer().getPluginManager().registerEvents(new EventsClass(this), this);
     }
 }

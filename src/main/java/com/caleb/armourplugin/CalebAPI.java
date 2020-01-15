@@ -3,6 +3,8 @@ package com.caleb.armourplugin;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.Random;
 
@@ -26,5 +28,13 @@ public class CalebAPI {
         }
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+
+    public static boolean gotFrost(Player player) {
+        for(PotionEffect effect : player.getActivePotionEffects()) {
+            if (effect.getType().equals(PotionEffectType.SLOW)) {
+                return true;
+            }
+        } return false;
     }
 }
