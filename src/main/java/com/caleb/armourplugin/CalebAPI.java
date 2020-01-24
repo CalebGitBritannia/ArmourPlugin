@@ -9,12 +9,12 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.Random;
 
 public class CalebAPI {
-    public static boolean wearingDrumArmour(Player player) {
+    public static boolean wearingDrumArmour(Player player, String string) {
         int count = 0;
         ItemStack[] inventory = player.getInventory().getArmorContents();
         for (int i = 0; i<inventory.length; i++) {
             if (inventory[i].getItemMeta() != null) {
-                if(inventory[i].getItemMeta().getDisplayName().contains("Drum Island")) {
+                if(inventory[i].getItemMeta().getDisplayName().contains(string)) {
                     count += 1;
                 }
             }
@@ -38,12 +38,12 @@ public class CalebAPI {
         } return false;
     }
 
-    public static int getFrost(Player player) {
+    public static int getFrost(Player player, String name) {
         int count = 0;
         ItemStack[] inventory = player.getInventory().getArmorContents();
         for (int i = 0; i<inventory.length; i++) {
             if (inventory[i].getItemMeta() != null) {
-                if(inventory[i].getItemMeta().getDisplayName().contains("Drum Island")) {
+                if(inventory[i].getItemMeta().getDisplayName().contains(name)) {
                     count += (int) inventory[i].getItemMeta().getDisplayName().charAt(inventory[i].getItemMeta().getDisplayName().length() - 1) - 48;
                 }
             }

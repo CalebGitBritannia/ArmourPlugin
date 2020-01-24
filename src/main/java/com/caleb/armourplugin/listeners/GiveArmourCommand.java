@@ -25,6 +25,14 @@ public class GiveArmourCommand implements CommandExecutor {
                         giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                     } else if (strings[0].equalsIgnoreCase("drumislandboots")) {
                         giveCustomArmour((ChatColor.AQUA + "Drum Island Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                    } else if (strings[0].equalsIgnoreCase("jayachestplate")) {
+                        giveCustomArmour((ChatColor.AQUA + "Jaya Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                    } else if (strings[0].equalsIgnoreCase("jayaleggings")) {
+                        giveCustomArmour((ChatColor.AQUA + "Jaya Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                    } else if (strings[0].equalsIgnoreCase("jayaboots")) {
+                        giveCustomArmour((ChatColor.AQUA + "Jaya Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                    } else if (strings[0].equalsIgnoreCase("jayahelmet")) {
+                        giveCustomArmour((ChatColor.AQUA + "Jaya Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
                     }else {
                         commandSender.sendMessage("Sorry but that item is not recognised!");
                     }

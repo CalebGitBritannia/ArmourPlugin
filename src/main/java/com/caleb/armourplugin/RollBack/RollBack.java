@@ -59,7 +59,6 @@ public class RollBack{
     public void restoreState() {
         for (int i = 0; i < blocks.size(); i++) {
             Block current = blocks.get(i);
-            System.out.println(current.getLocation().toString());
             current.getLocation().getBlock().setType(materials.get(i));
         }
     }
