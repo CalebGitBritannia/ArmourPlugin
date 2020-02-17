@@ -16,7 +16,7 @@ public class GiveArmourCommand implements CommandExecutor {
         if(commandSender instanceof Player) {
             if(strings.length > 1) {
                 int value = Integer.valueOf(strings[1]);
-                if (value > 0 && value < 5) {
+                if (value > 0 && value < 4) {
                     if (strings[0].equalsIgnoreCase("drumislandhelmet")) {
                         giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
                     } else if (strings[0].equalsIgnoreCase("drumislandchestplate")) {
@@ -25,19 +25,19 @@ public class GiveArmourCommand implements CommandExecutor {
                         giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                     } else if (strings[0].equalsIgnoreCase("drumislandboots")) {
                         giveCustomArmour((ChatColor.AQUA + "Drum Island Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
-                    } else if (strings[0].equalsIgnoreCase("jayachestplate")) {
-                        giveCustomArmour((ChatColor.AQUA + "Jaya Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
-                    } else if (strings[0].equalsIgnoreCase("jayaleggings")) {
-                        giveCustomArmour((ChatColor.AQUA + "Jaya Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
-                    } else if (strings[0].equalsIgnoreCase("jayaboots")) {
-                        giveCustomArmour((ChatColor.AQUA + "Jaya Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
-                    } else if (strings[0].equalsIgnoreCase("jayahelmet")) {
-                        giveCustomArmour((ChatColor.AQUA + "Jaya Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                    } else if (strings[0].equalsIgnoreCase("littlegardenchestplate")) {
+                        giveCustomArmour((ChatColor.AQUA + "Little Garden Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                    } else if (strings[0].equalsIgnoreCase("littlegardenleggings")) {
+                        giveCustomArmour((ChatColor.AQUA + "Little Garden Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                    } else if (strings[0].equalsIgnoreCase("littlegardenboots")) {
+                        giveCustomArmour((ChatColor.AQUA + "Little Garden Boots" + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                    } else if (strings[0].equalsIgnoreCase("littlegardenhelmet")) {
+                        giveCustomArmour((ChatColor.AQUA + "Little Garden Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
                     }else {
                         commandSender.sendMessage("Sorry but that item is not recognised!");
                     }
                 } else {
-                    commandSender.sendMessage("Please provide a valid number between 1 and 4");
+                    commandSender.sendMessage("Please provide a valid number between 1 and 3");
                 }
 
                 return true;
