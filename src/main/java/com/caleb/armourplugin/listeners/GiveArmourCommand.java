@@ -18,21 +18,29 @@ public class GiveArmourCommand implements CommandExecutor {
                 int value = Integer.valueOf(strings[1]);
                 if (value > 0 && value < 4) {
                     if (strings[0].equalsIgnoreCase("drumislandhelmet")) {
-                        giveCustomArmour((ChatColor.AQUA + "Drum Island Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                        giveCustomArmour(("§f§k0 §f§l- §1§lFrostbite Helmet " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_HELMET);
                     } else if (strings[0].equalsIgnoreCase("drumislandchestplate")) {
-                        giveCustomArmour((ChatColor.AQUA + "Drum Island Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                        giveCustomArmour(("§f§k0 §f§l- §1§lFrostbite Chestplate " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
                     } else if (strings[0].equalsIgnoreCase("drumislandleggings")) {
-                        giveCustomArmour((ChatColor.AQUA + "Drum Island Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                        giveCustomArmour(("§f§k0 §f§l- §1§lFrostbite Leggings " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                     } else if (strings[0].equalsIgnoreCase("drumislandboots")) {
-                        giveCustomArmour((ChatColor.AQUA + "Drum Island Boots " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                        giveCustomArmour(("§f§k0 §f§l- §1§lFrostbite Boots " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
                     } else if (strings[0].equalsIgnoreCase("littlegardenchestplate")) {
-                        giveCustomArmour((ChatColor.AQUA + "Little Garden Chestplate " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                        giveCustomArmour(("§f§k0 §f§l- §3§lSpring Chestplate " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
                     } else if (strings[0].equalsIgnoreCase("littlegardenleggings")) {
-                        giveCustomArmour((ChatColor.AQUA + "Little Garden Leggings " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                        giveCustomArmour(("§f§k0 §f§l- §3§lJungle Leggings " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                     } else if (strings[0].equalsIgnoreCase("littlegardenboots")) {
-                        giveCustomArmour((ChatColor.AQUA + "Little Garden Boots" + strings[1]), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
+                        giveCustomArmour(("§f§k0 §f§l- §3§lJungle Boots " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
                     } else if (strings[0].equalsIgnoreCase("littlegardenhelmet")) {
-                        giveCustomArmour((ChatColor.AQUA + "Little Garden Helmet " + strings[1]), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                        giveCustomArmour(("§f§k0 §f§l- §3§lJungle Helmet " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                    } else if (strings[0].equalsIgnoreCase("jayahelmet")) {
+                        giveCustomArmour(("§f§k0 §f§l- §7§lSpring Helmet " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_HELMET);
+                    } else if (strings[0].equalsIgnoreCase("jayachestplate")) {
+                        giveCustomArmour(("§f§k0 §f§l- §7§lSpring Chestplate " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                    } else if (strings[0].equalsIgnoreCase("jayaleggings")) {
+                        giveCustomArmour(("§f§k0 §f§l- §7§lSpring Leggings " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
+                    } else if (strings[0].equalsIgnoreCase("jayaboots")) {
+                        giveCustomArmour(("§f§k0 §f§l- §7§lSpring Boots " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
                     }else {
                         commandSender.sendMessage("Sorry but that item is not recognised!");
                     }

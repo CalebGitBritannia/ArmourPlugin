@@ -33,14 +33,14 @@ public class EventsClass implements Listener {
     public void onDamage(EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof Player) {
             Player player = (Player) e.getEntity();
-            if (CalebAPI.wearingDrumArmour(player,"Drum Island")) {
+            if (CalebAPI.wearingDrumArmour(player,"Frostbite")) {
                 if (CalebAPI.getRandomNumberInRange(1,5) == 1) {
                     if (e.getDamager() instanceof Player && !CalebAPI.gotFrost((Player) e.getDamager())) {
                         LivingEntity living = (LivingEntity) e.getDamager();
                         player.getWorld().playSound(player.getLocation(), Sound.GLASS, 10, 1);
                         int effect = 1;
-                        System.out.println(CalebAPI.getFrost(player, "Drum Island"));
-                        switch (CalebAPI.getFrost(player, "Drum Island")) {
+                        System.out.println(CalebAPI.getFrost(player, "Frostbite"));
+                        switch (CalebAPI.getFrost(player, "Frostbite")) {
                             case(1):
                                 effect = 1;
                                 break;
@@ -75,9 +75,9 @@ public class EventsClass implements Listener {
 
                     }
                 }
-            } else if (CalebAPI.wearingDrumArmour(player, "Little Garden")) {
+            } else if (CalebAPI.wearingDrumArmour(player, "Jungle")) {
                 player.getWorld().playSound(player.getLocation(), Sound.ANVIL_LAND, 10, 1);
-                BukkitTask knick = new EventsClass.knockBack(player, CalebAPI.getFrost(player, "Little Garden"), plugin).runTaskLater(plugin, 1);
+                BukkitTask knick = new EventsClass.knockBack(player, CalebAPI.getFrost(player, "Jungle"), plugin).runTaskLater(plugin, 1);
             }
         }
     }
