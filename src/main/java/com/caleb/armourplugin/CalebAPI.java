@@ -44,7 +44,7 @@ public class CalebAPI {
         for (int i = 0; i<inventory.length; i++) {
             if (inventory[i].getItemMeta() != null) {
                 if(inventory[i].getItemMeta().getDisplayName().contains(name)) {
-                    count += (int) inventory[i].getItemMeta().getDisplayName().charAt(inventory[i].getItemMeta().getDisplayName().length() - 1) - 48;
+                    count += (int) inventory[i].getItemMeta().getDisplayName().charAt(inventory[i].getItemMeta().getDisplayName().length() - 14) - 48;
                 }
             }
         }

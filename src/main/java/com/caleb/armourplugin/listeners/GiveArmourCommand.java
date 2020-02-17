@@ -26,7 +26,7 @@ public class GiveArmourCommand implements CommandExecutor {
                     } else if (strings[0].equalsIgnoreCase("drumislandboots")) {
                         giveCustomArmour(("§f§k0 §f§l- §1§lFrostbite Boots " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_BOOTS);
                     } else if (strings[0].equalsIgnoreCase("littlegardenchestplate")) {
-                        giveCustomArmour(("§f§k0 §f§l- §3§lSpring Chestplate " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
+                        giveCustomArmour(("§f§k0 §f§l- §3§lJungle Chestplate " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_CHESTPLATE);
                     } else if (strings[0].equalsIgnoreCase("littlegardenleggings")) {
                         giveCustomArmour(("§f§k0 §f§l- §3§lJungle Leggings " + strings[1] + " §f§l- §f§k0 "), 1, (Player) commandSender, Material.DIAMOND_LEGGINGS);
                     } else if (strings[0].equalsIgnoreCase("littlegardenboots")) {

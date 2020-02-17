@@ -3,6 +3,7 @@ package com.caleb.armourplugin.listeners;
 import com.caleb.armourplugin.CalebAPI;
 import com.caleb.armourplugin.RollBack.RollBack;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Particle;
+import net.minecraft.server.v1_7_R4.Vec3D;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -13,6 +14,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -21,12 +23,54 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
+
 public class EventsClass implements Listener {
 
     private Plugin plugin;
+    private ArrayList<String[]> jumpers;
 
     public EventsClass(Plugin plugin) {
         this.plugin = plugin;
+        this.jumpers = new ArrayList<String[]>();
+    }
+
+    private boolean canPlayerJump(Player player) {
+        String playerName = player.getUniqueId().toString();
+        for (String[] current : jumpers) {
+            if (current[0].equalsIgnoreCase(playerName)) {
+                return current[1].equalsIgnoreCase("true");
+            }
+        } jumpers.add(new String[]{playerName, "false"});
+        BukkitTask jumpCooldown = new EventsClass.jumpCooldown(player, jumpers).runTaskLater(plugin, 5 * 20);
+        return true;
+    }
+
+    @EventHandler
+    public void onJump(PlayerMoveEvent e) {
+        if (e.getTo().getY() > e.getFrom().getY() && e.getPlayer().isSneaking() && canPlayerJump(e.getPlayer()) && CalebAPI.wearingDrumArmour(e.getPlayer(), "Spring")) {
+            Vector playerSpeed = e.getPlayer().getVelocity();
+            BukkitTask jumpCooldown = new EventsClass.jumpCooldown(e.getPlayer(), jumpers).runTaskLater(plugin, 20);
+            Vector lookVec = e.getPlayer().getLocation().getDirection();
+            double multiplier = CalebAPI.getFrost(e.getPlayer(), "Spring") * 0.8;
+            double yValue = lookVec.getY() * multiplier;
+            if (yValue > 1)
+                yValue = 1;
+            playerSpeed.setX(lookVec.getX() * multiplier);
+            playerSpeed.setY(yValue);
+            playerSpeed.setZ(lookVec.getZ() * multiplier);
+            e.getPlayer().setVelocity(playerSpeed);
+        }
+    }
+
+    @EventHandler
+    public void onRealDamage(EntityDamageEvent e) {
+        if (e.getEntity() instanceof Player) {
+            Player player = (Player) e.getEntity();
+            if(CalebAPI.wearingDrumArmour(player, "Spring") && e.getCause().equals(EntityDamageEvent.DamageCause.FALL)) {
+                e.setCancelled(true);
+            }
+        }
     }
 
     @EventHandler
@@ -92,6 +136,31 @@ public class EventsClass implements Listener {
 
         public void run() {
             rollBack.restoreState();
+        }
+    }
+
+    public static class jumpCooldown extends BukkitRunnable {
+
+        private String playerUUID;
+        private ArrayList<String[]> jumpers;
+
+        jumpCooldown(Player player, ArrayList<String[]> jumpers) {
+            this.playerUUID = player.getUniqueId().toString();
+            this.jumpers = jumpers;
+            for(String[] current : jumpers) {
+                if (current[0].equalsIgnoreCase(playerUUID)) {
+                    current[1] = "false";
+                }
+            }
+        }
+
+        public void run() {
+            System.out.println("Cooldown");
+            for(String[] current : jumpers) {
+                if (current[0].equalsIgnoreCase(playerUUID)) {
+                    current[1] = "true";
+                }
+            }
         }
     }
 
