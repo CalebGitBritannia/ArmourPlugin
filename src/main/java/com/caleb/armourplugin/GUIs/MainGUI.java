@@ -34,7 +34,7 @@ public class MainGUI extends GuiAbstract implements Listener {
             } else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.ANVIL)) {
                 menu = new JungleArmourGUI();
             }else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.POTION)) {
-                player.closeInventory();
+                menu = new SpringArmourGIO();
             }
             if (menu != null) {
                 menu.initaliseItems();

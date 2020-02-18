@@ -18,18 +18,18 @@ public class SpringArmourGIO extends GuiAbstract implements Listener {
 
     @Override
     public void initaliseItems() {
-        inv.setItem(12, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lSpring Helmet 1 §f§l- §f§k0 "));
-        inv.setItem(21, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lSpring Chestplate 1 §f§l- §f§k0 "));
-        inv.setItem(30, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lSpring Leggings 1 §f§l- §f§k0 "));
-        inv.setItem(39, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lSpring Boots 1 §f§l- §f§k0 "));
-        inv.setItem(13, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lSpring Helmet 2 §f§l- §f§k0 "));
-        inv.setItem(22, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lSpring Chestplate 2 §f§l- §f§k0 "));
-        inv.setItem(31, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lSpring Leggings 2 §f§l- §f§k0 "));
-        inv.setItem(40, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lSpring Boots 2 §f§l- §f§k0 "));
-        inv.setItem(14, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lSpring Helmet 3 §f§l- §f§k0 "));
-        inv.setItem(23, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lSpring Chestplate 3 §f§l- §f§k0 "));
-        inv.setItem(32, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lSpring Leggings 3 §f§l- §f§k0 "));
-        inv.setItem(41, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lSpring Boots 3 §f§l- §f§k0 "));
+        inv.setItem(12, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §7§lSpring Helmet 1 §f§l- §f§k0 "));
+        inv.setItem(21, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §7§lSpring Chestplate 1 §f§l- §f§k0 "));
+        inv.setItem(30, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §7§lSpring Leggings 1 §f§l- §f§k0 "));
+        inv.setItem(39, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §7§lSpring Boots 1 §f§l- §f§k0 "));
+        inv.setItem(13, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §7§lSpring Helmet 2 §f§l- §f§k0 "));
+        inv.setItem(22, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §7§lSpring Chestplate 2 §f§l- §f§k0 "));
+        inv.setItem(31, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §7§lSpring Leggings 2 §f§l- §f§k0 "));
+        inv.setItem(40, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §7§lSpring Boots 2 §f§l- §f§k0 "));
+        inv.setItem(14, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §7§lSpring Helmet 3 §f§l- §f§k0 "));
+        inv.setItem(23, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §7§lSpring Chestplate 3 §f§l- §f§k0 "));
+        inv.setItem(32, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §7§lSpring Leggings 3 §f§l- §f§k0 "));
+        inv.setItem(41, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §7§lSpring Boots 3 §f§l- §f§k0 "));
     }
 
     @EventHandler

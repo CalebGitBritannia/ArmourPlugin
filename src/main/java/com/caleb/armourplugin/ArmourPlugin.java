@@ -1,7 +1,9 @@
 package com.caleb.armourplugin;
 
 import com.caleb.armourplugin.GUIs.FrostbiteArmourGUI;
+import com.caleb.armourplugin.GUIs.JungleArmourGUI;
 import com.caleb.armourplugin.GUIs.MainGUI;
+import com.caleb.armourplugin.GUIs.SpringArmourGIO;
 import com.caleb.armourplugin.listeners.EventsClass;
 import com.caleb.armourplugin.listeners.GiveArmourCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +20,8 @@ public class ArmourPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventsClass(this), this);
         getServer().getPluginManager().registerEvents(new MainGUI(), this);
         getServer().getPluginManager().registerEvents(new FrostbiteArmourGUI(), this);
+        getServer().getPluginManager().registerEvents(new SpringArmourGIO(), this);
+        getServer().getPluginManager().registerEvents(new JungleArmourGUI(), this);
     }
 
     private void createConfig() {

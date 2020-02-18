@@ -18,18 +18,18 @@ public class JungleArmourGUI extends GuiAbstract implements Listener {
 
     @Override
     public void initaliseItems() {
-        inv.setItem(12, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lJungle Helmet 1 §f§l- §f§k0 "));
-        inv.setItem(21, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lJungle Chestplate 1 §f§l- §f§k0 "));
-        inv.setItem(30, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lJungle Leggings 1 §f§l- §f§k0 "));
-        inv.setItem(39, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lJungle Boots 1 §f§l- §f§k0 "));
-        inv.setItem(13, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lJungle Helmet 2 §f§l- §f§k0 "));
-        inv.setItem(22, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lJungle Chestplate 2 §f§l- §f§k0 "));
-        inv.setItem(31, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lJungle Leggings 2 §f§l- §f§k0 "));
-        inv.setItem(40, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lJungle Boots 2 §f§l- §f§k0 "));
-        inv.setItem(14, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §1§lJungle Helmet 3 §f§l- §f§k0 "));
-        inv.setItem(23, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §1§lJungle Chestplate 3 §f§l- §f§k0 "));
-        inv.setItem(32, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §1§lJungle Leggings 3 §f§l- §f§k0 "));
-        inv.setItem(41, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §1§lJungle Boots 3 §f§l- §f§k0 "));
+        inv.setItem(12, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §3§lJungle Helmet 1 §f§l- §f§k0 "));
+        inv.setItem(21, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §3§lJungle Chestplate 1 §f§l- §f§k0 "));
+        inv.setItem(30, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §3§lJungle Leggings 1 §f§l- §f§k0 "));
+        inv.setItem(39, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §3§lJungle Boots 1 §f§l- §f§k0 "));
+        inv.setItem(13, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §3§lJungle Helmet 2 §f§l- §f§k0 "));
+        inv.setItem(22, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §3§lJungle Chestplate 2 §f§l- §f§k0 "));
+        inv.setItem(31, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §3§lJungle Leggings 2 §f§l- §f§k0 "));
+        inv.setItem(40, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §3§lJungle Boots 2 §f§l- §f§k0 "));
+        inv.setItem(14, createGuiItem(Material.DIAMOND_HELMET, "§f§k0 §f§l- §3§lJungle Helmet 3 §f§l- §f§k0 "));
+        inv.setItem(23, createGuiItem(Material.DIAMOND_CHESTPLATE, "§f§k0 §f§l- §3§lJungle Chestplate 3 §f§l- §f§k0 "));
+        inv.setItem(32, createGuiItem(Material.DIAMOND_LEGGINGS, "§f§k0 §f§l- §3§lJungle Leggings 3 §f§l- §f§k0 "));
+        inv.setItem(41, createGuiItem(Material.DIAMOND_BOOTS, "§f§k0 §f§l- §3§lJungle Boots 3 §f§l- §f§k0 "));
     }
 
     @EventHandler
