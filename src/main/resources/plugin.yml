@@ -2,3 +2,7 @@ name: ArmourPlugin
 version: 1
 author: CalebBritannia
 main: com.caleb.armourplugin.ArmourPlugin
+commands:
+  givearmour:
+    description: Gives the user a custom set of armour (/givecustomarmour)
+    usage: /givecustomarmour
