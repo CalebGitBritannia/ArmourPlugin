@@ -11,11 +11,14 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 public class MainGUI extends GuiAbstract implements Listener {
 
     public MainGUI() {
-        super("Armour Selection");
+        super("Armour Selection", 9);
     }
 
-    public void initializeItems() {
+    @Override
+    public void initaliseItems() {
         this.getInventory().addItem(createGuiItem(Material.PACKED_ICE, "§bFrostbite Armour"));
+        this.getInventory().addItem(createGuiItem(Material.ANVIL, "§3Jungle Armour"));
+        this.getInventory().addItem(createGuiItem(Material.POTION, "§7Spring Armour"));
     }
 
     @EventHandler
@@ -23,16 +26,17 @@ public class MainGUI extends GuiAbstract implements Listener {
         if (e.getView().getTitle().equalsIgnoreCase("Armour Selection")) {
             e.setCancelled(true);
             Player player = (Player) e.getWhoClicked();
+            GuiAbstract menu = null;
             if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.PACKED_ICE)) {
-                player.sendMessage(ChatColor.BLUE + "Test!");
+                menu = new FrostbiteArmourGUI();
+            } else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.ANVIL)) {
                 player.closeInventory();
-//                if (e.getClick().equals(ClickType.RIGHT)) {
-//                    player.sendMessage(ChatColor.RED + "This is a passive skill, you cannot use it");
-//                } else {
-//                    player.sendMessage(ChatColor.BLUE + "You have selected the freeze protect skill");
-//                    player.closeInventory();
-//                }
-                //ArmourSkills.freezeProtect(player);
+            }else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.POTION)) {
+                player.closeInventory();
+            }
+            if (menu != null) {
+                menu.initaliseItems();
+                menu.openInventory(player);
             }
         }
     }

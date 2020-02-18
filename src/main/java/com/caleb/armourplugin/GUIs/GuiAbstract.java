@@ -20,8 +20,8 @@ public class GuiAbstract implements InventoryHolder {
     private final Inventory inv;
     private String title;
 
-    public GuiAbstract(String title) {
-        inv = Bukkit.createInventory(this, 9, title);
+    public GuiAbstract(String title, int size) {
+        inv = Bukkit.createInventory(this, size, title);
         this.title = title;
     }
 
@@ -49,5 +49,9 @@ public class GuiAbstract implements InventoryHolder {
 
     public void openInventory(Player p) {
         p.openInventory(inv);
+    }
+
+    public void initaliseItems() {
+
     }
 }

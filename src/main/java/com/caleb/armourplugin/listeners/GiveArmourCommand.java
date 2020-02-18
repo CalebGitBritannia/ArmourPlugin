@@ -52,7 +52,7 @@ public class GiveArmourCommand implements CommandExecutor {
                 return true;
             } else {
                 MainGUI mainMenu = new MainGUI();
-                mainMenu.initializeItems();
+                mainMenu.initaliseItems();
                 mainMenu.openInventory( (Player) commandSender);
                 return true;
             }
