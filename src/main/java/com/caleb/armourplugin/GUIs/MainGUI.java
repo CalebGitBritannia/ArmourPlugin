@@ -2,6 +2,7 @@ package com.caleb.armourplugin.GUIs;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,10 +28,11 @@ public class MainGUI extends GuiAbstract implements Listener {
             e.setCancelled(true);
             Player player = (Player) e.getWhoClicked();
             GuiAbstract menu = null;
+            player.playSound(player.getLocation(), Sound.SLIME_ATTACK, 1, 1);
             if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.PACKED_ICE)) {
                 menu = new FrostbiteArmourGUI();
             } else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.ANVIL)) {
-                player.closeInventory();
+                menu = new JungleArmourGUI();
             }else if (e.getCurrentItem()!=null &&  e.getCurrentItem().getType().equals(Material.POTION)) {
                 player.closeInventory();
             }
