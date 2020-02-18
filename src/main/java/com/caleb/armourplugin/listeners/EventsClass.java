@@ -52,6 +52,7 @@ public class EventsClass implements Listener {
             Vector playerSpeed = e.getPlayer().getVelocity();
             BukkitTask jumpCooldown = new EventsClass.jumpCooldown(e.getPlayer(), jumpers).runTaskLater(plugin, 20);
             Vector lookVec = e.getPlayer().getLocation().getDirection();
+            e.getPlayer().getLocation().getWorld().playSound(e.getPlayer().getLocation(), Sound.ARROW_HIT, 5, 1);
             double multiplier = CalebAPI.getFrost(e.getPlayer(), "Spring") * 0.8;
             double yValue = lookVec.getY() * multiplier;
             if (yValue > 1)

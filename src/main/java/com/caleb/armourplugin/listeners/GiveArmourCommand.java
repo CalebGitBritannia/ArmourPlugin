@@ -1,6 +1,7 @@
 package com.caleb.armourplugin.listeners;
 
 import com.caleb.armourplugin.CalebAPI;
+import com.caleb.armourplugin.GUIs.MainGUI;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -50,7 +51,9 @@ public class GiveArmourCommand implements CommandExecutor {
 
                 return true;
             } else {
-                commandSender.sendMessage("(armour) (value)");
+                MainGUI mainMenu = new MainGUI();
+                mainMenu.initializeItems();
+                mainMenu.openInventory( (Player) commandSender);
                 return true;
             }
         }

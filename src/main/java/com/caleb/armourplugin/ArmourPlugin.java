@@ -1,5 +1,6 @@
 package com.caleb.armourplugin;
 
+import com.caleb.armourplugin.GUIs.MainGUI;
 import com.caleb.armourplugin.listeners.EventsClass;
 import com.caleb.armourplugin.listeners.GiveArmourCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,6 +15,7 @@ public class ArmourPlugin extends JavaPlugin {
         createConfig();
         this.getCommand("givearmour").setExecutor(new GiveArmourCommand());
         getServer().getPluginManager().registerEvents(new EventsClass(this), this);
+        getServer().getPluginManager().registerEvents(new MainGUI(), this);
     }
 
     private void createConfig() {
