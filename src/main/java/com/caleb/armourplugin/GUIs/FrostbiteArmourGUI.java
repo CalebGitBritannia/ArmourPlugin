@@ -1,6 +1,7 @@
 package com.caleb.armourplugin.GUIs;
 
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,6 +38,7 @@ public class FrostbiteArmourGUI extends GuiAbstract implements Listener {
         if (e.getView().getTitle().equalsIgnoreCase("Frostbite Armour")) {
             e.setCancelled(true);
             Player player = (Player) e.getWhoClicked();
+            player.playSound(player.getLocation(), Sound.GLASS, 1, 1);
             if (e.getCurrentItem().getItemMeta().getDisplayName().contains("Frostbite")) {
                 player.getInventory().addItem(e.getClickedInventory().getItem(e.getSlot()));
             }

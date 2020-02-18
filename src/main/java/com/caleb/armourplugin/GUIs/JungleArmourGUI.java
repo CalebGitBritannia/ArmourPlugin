@@ -1,6 +1,7 @@
 package com.caleb.armourplugin.GUIs;
 
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,6 +38,7 @@ public class JungleArmourGUI extends GuiAbstract implements Listener {
         if (e.getView().getTitle().equalsIgnoreCase("Jungle Armour")) {
             e.setCancelled(true);
             Player player = (Player) e.getWhoClicked();
+            player.playSound(player.getLocation(), Sound.ANVIL_LAND, 1, 1);
             if (e.getCurrentItem().getItemMeta().getDisplayName().contains("Jungle")) {
                 player.getInventory().addItem(e.getClickedInventory().getItem(e.getSlot()));
             }
